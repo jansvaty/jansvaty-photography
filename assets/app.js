@@ -37,13 +37,13 @@
   var TITLES = { all: "Selected work", about: "About", contact: "Contact" };
 
   var BIO_LEDE =
-    "I capture moments and give them a place in history — photos that bring you right back to that instant, every time you look at them.";
+    "I capture moments and give them a place in history: photos that bring you right back to that instant, every time you look at them.";
 
   var BODIES = {
     about: [
-      "Jan grew up drawn to photography and visual art long before he could afford a camera of his own — so he studied the craft in theory first, waiting for the day he could put it into practice. When that day came, he worked his way through a string of old film cameras and lenses, learning by feel. A trip to Tokyo finally settled it: he picked up a Sony A7III there, and it's been his camera since.",
-      "That pull toward images turned out to shape more than a hobby — it led him into a Master's degree in User Experience Design, while portraits and landscapes stayed a constant thread of their own alongside it. Series are released when they're finished rather than on a schedule — Portraits, Ocean and Street photography are the three running bodies of work.",
-      "The peak of it so far was photographing a Czech presidential delegation on its visit to Wellington, New Zealand — where he's now based.",
+      "I grew up drawn to photography and visual art long before I could afford a camera of my own, so I studied the craft in theory first, waiting for the day I could put it into practice. When that day came, I worked my way through a string of old film cameras and lenses, learning by feel. A trip to Tokyo finally settled it: I picked up a Sony A7III there, and it's been my camera since.",
+      "That pull toward images turned out to shape more than a hobby. It led me into a Master's degree in User Experience Design, while portraits and landscapes stayed a constant thread of their own alongside it. Series are released when they're finished rather than on a schedule; Portraits, Ocean and Street photography are the three running bodies of work.",
+      "The peak of it so far was photographing a Czech presidential delegation on its visit to Wellington, New Zealand, where I'm now based.",
       "Available for commissions, editorial assignments and prints."
     ],
     contact: [
