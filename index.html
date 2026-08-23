@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Jan Svaty — Photography</title>
+<meta name="description" content="Photography by Jan Svaty — portraits, ocean, and street work. Based in Auckland, New Zealand.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=1">
+</head>
+<body>
+  <div class="stage">
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <a href="#" class="logo-link" data-view="all">
+          <img src="assets/logo.png" alt="Jan Svaty">
+        </a>
+        <nav class="nav"></nav>
+        <div class="sub-links">
+          <a href="#about" data-view="about">About</a>
+          <a href="#contact" data-view="contact">Contact</a>
+        </div>
+      </div>
+      <div class="sidebar-footer">
+        <div>All rights reserved.</div>
+        <div>Copyright 2026 © Jan Svaty.</div>
+        <div class="socials">
+          <a href="#" target="_blank" rel="noopener">Instagram</a>
+          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <button class="theme-toggle" type="button">Dark</button>
+      </div>
+
+      <div class="text-view" hidden></div>
+
+      <div class="gallery-view">
+        <div class="strip"></div>
+        <div class="strip-controls">
+          <button type="button" data-nudge="-1" aria-label="Previous">←</button>
+          <button type="button" data-nudge="1" aria-label="Next">→</button>
+          <span class="hint">Scroll or swipe sideways</span>
+        </div>
+      </div>
+    </main>
+
+    <div class="lightbox" hidden>
+      <img src="" alt="">
+    </div>
+  </div>
+
+  <script src="assets/app.js?v=1"></script>
+</body>
+</html>
