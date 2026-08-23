@@ -47,7 +47,7 @@
     ],
     contact: [
       "For commissions, prints and licensing — hello@jansvaty.com",
-      "Instagram · LinkedIn",
+      '<a href="https://www.instagram.com/jan.svaty/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.linkedin.com/in/jansvaty/?skipRedirect=true" target="_blank" rel="noopener">LinkedIn</a>',
       "Based in Auckland, New Zealand. Working worldwide."
     ]
   };
