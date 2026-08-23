@@ -41,14 +41,15 @@
 
   var BODIES = {
     about: [
-      "Jan Svaty is a photographer working between portraiture, the coastline and the street. He photographs slowly and edits harder, looking for the frame that still holds a whole afternoon inside it.",
-      "Work is made on 35mm digital, mostly in available light. Series are released when they are finished rather than on a schedule — Portraits, Ocean and Street photography are the three running bodies of work.",
+      "Jan grew up drawn to photography and visual art long before he could afford a camera of his own — so he studied the craft in theory first, waiting for the day he could put it into practice. When that day came, he worked his way through a string of old film cameras and lenses, learning by feel. A trip to Tokyo finally settled it: he picked up a Sony A7III there, and it's been his camera since.",
+      "That pull toward images turned out to shape more than a hobby — it led him into a Master's degree in User Experience Design, while portraits and landscapes stayed a constant thread of their own alongside it. Series are released when they're finished rather than on a schedule — Portraits, Ocean and Street photography are the three running bodies of work.",
+      "The peak of it so far was photographing a Czech presidential delegation on its visit to Wellington, New Zealand — where he's now based.",
       "Available for commissions, editorial assignments and prints."
     ],
     contact: [
       "For commissions, prints and licensing — hello@jansvaty.com",
       '<a href="https://www.instagram.com/jan.svaty/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.linkedin.com/in/jansvaty/?skipRedirect=true" target="_blank" rel="noopener">LinkedIn</a>',
-      "Based in Auckland, New Zealand. Working worldwide."
+      "Based in Wellington, New Zealand. Working worldwide."
     ]
   };
 
