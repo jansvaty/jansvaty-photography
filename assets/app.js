@@ -9,20 +9,32 @@
   var FRAMES = [
     { n: 11, title: "Water", series: "portraits" },
     { n: 6, title: "Mila" },
-    { n: 3, title: "Beaky" },
+    { n: 21, title: "Mighty ocean", series: "ocean" },
+    { n: 3, title: "Beaky", series: "wildlife" },
     { n: 4, title: "Barber in Porto", series: "street" },
     { n: 5, title: "Charles bridge", series: "street" },
+    { n: 29, title: "Eye of the gorilla", series: "wildlife" },
     { n: 12, title: "Ouky Douky", series: "portraits" },
     { n: 9, title: "Spring coming", series: "portraits" },
     { n: 15, title: "Oakley", series: "portraits" },
+    { n: 23, title: "Orca", series: "wildlife" },
     { n: 18, title: "Nazaré", series: "ocean" },
+    { n: 20, title: "Blue moon", series: "ocean" },
     { n: 8, title: "Orloj", series: "street" },
-    { n: 1, title: "Aurora Australis" },
+    { n: 28, title: "Ginger", series: "wildlife" },
+    { n: 1, title: "Aurora Australis", series: "landscape" },
+    { n: 22, title: "Wave", series: "ocean" },
     { n: 16, title: "Basket napping" },
     { n: 19, title: "Porto church", series: "street" },
+    { n: 24, title: "Lighthouse", series: "landscape" },
     { n: 13, title: "Picnic at the beach", series: "ocean" },
     { n: 2, title: "Xmass Bay", series: "ocean" },
+    { n: 30, title: "Wellington on a good day", series: "landscape" },
+    { n: 25, title: "Lyall Bay lineup", series: "ocean" },
+    { n: 31, title: "McKinnon Pass", series: "landscape" },
     { n: 7, title: "Picturesque", series: "portraits" },
+    { n: 27, title: "Dubai", series: "landscape" },
+    { n: 26, title: "Tiny home by the beach", series: "landscape" },
     { n: 10, title: "Peace out", series: "portraits" }
   ].map(function (x) {
     return { src: f(x.n), title: x.title, series: x.series };
@@ -31,7 +43,9 @@
   var SERIES = [
     { id: "portraits", label: "Portraits", title: "Portraits" },
     { id: "ocean", label: "Ocean", title: "Ocean" },
-    { id: "street", label: "Street photography", title: "Street photography" }
+    { id: "street", label: "Street photography", title: "Street photography" },
+    { id: "wildlife", label: "Wildlife", title: "Wildlife" },
+    { id: "landscape", label: "Landscape", title: "Landscape" }
   ];
 
   var TITLES = { all: "Selected work", about: "About", contact: "Contact" };
@@ -42,7 +56,7 @@
   var BODIES = {
     about: [
       "I grew up drawn to photography and visual art long before I could afford a camera of my own, so I studied the craft in theory first, waiting for the day I could put it into practice. When that day came, I worked my way through a string of old film cameras and lenses, learning by feel. A trip to Tokyo finally settled it: I picked up a Sony A7III there, and it's been my camera since.",
-      "That pull toward images turned out to shape more than a hobby. It led me into a Master's degree in User Experience Design, while portraits and landscapes stayed a constant thread of their own alongside it. Series are released when they're finished rather than on a schedule; Portraits, Ocean and Street photography are the three running bodies of work.",
+      "That pull toward images turned out to shape more than a hobby. It led me into a Master's degree in User Experience Design, while portraits and landscapes stayed a constant thread of their own alongside it. Series are released when they're finished rather than on a schedule; Portraits, Ocean, Street photography, Wildlife and Landscape are the running bodies of work.",
       "The peak of it so far was photographing a Czech presidential delegation on its visit to Wellington, New Zealand, where I'm now based.",
       "Available for commissions, editorial assignments and prints."
     ],
@@ -180,7 +194,7 @@
 
   function onHashChange() {
     var hash = window.location.hash.replace("#", "");
-    var valid = ["all", "portraits", "ocean", "street", "about", "contact"];
+    var valid = ["all", "portraits", "ocean", "street", "wildlife", "landscape", "about", "contact"];
     state.view = valid.indexOf(hash) !== -1 ? hash : "all";
     render();
   }
