@@ -4,6 +4,9 @@
   var f = function (n) {
     return "assets/photos/p" + n + ".jpg";
   };
+  var fMobile = function (n) {
+    return "assets/photos-mobile/p" + n + ".jpg";
+  };
 
   // Authored running order, with titles — matches the Claude Design handoff spec.
   var FRAMES = [
@@ -37,7 +40,7 @@
     { n: 26, title: "Tiny home by the beach", series: "landscape" },
     { n: 10, title: "Peace out", series: "portraits" }
   ].map(function (x) {
-    return { src: f(x.n), title: x.title, series: x.series };
+    return { src: f(x.n), srcMobile: fMobile(x.n), title: x.title, series: x.series };
   });
 
   var SERIES = [
@@ -73,6 +76,8 @@
     sidebar: document.querySelector(".sidebar"),
     nav: document.querySelector(".nav"),
     themeToggle: document.querySelector(".theme-toggle"),
+    menuToggle: document.querySelector(".menu-toggle"),
+    scrim: document.querySelector(".sidebar-scrim"),
     main: document.querySelector(".main"),
     viewTitle: null,
     strip: document.querySelector(".strip"),
@@ -124,15 +129,18 @@
     });
   }
 
+  var MOBILE_MQ = window.matchMedia("(max-width: 720px)");
+
   function renderGallery() {
     var frames = currentFrames();
     els.strip.innerHTML =
       frames
         .map(function (photo) {
+          var src = MOBILE_MQ.matches ? photo.srcMobile : photo.src;
           return (
             '<figure class="frame">' +
             '<img src="' +
-            photo.src +
+            src +
             '" alt="' +
             photo.title +
             '" loading="lazy">' +
@@ -209,18 +217,37 @@
     els.lightboxImg.src = "";
   }
 
+  // Mobile menu (hamburger drawer — hidden entirely above the 720px breakpoint)
+  function openMobileMenu() {
+    els.sidebar.classList.add("mobile-open");
+    els.scrim.classList.add("visible");
+  }
+  function closeMobileMenu() {
+    els.sidebar.classList.remove("mobile-open");
+    els.scrim.classList.remove("visible");
+  }
+  els.menuToggle.addEventListener("click", function () {
+    if (els.sidebar.classList.contains("mobile-open")) closeMobileMenu();
+    else openMobileMenu();
+  });
+  els.scrim.addEventListener("click", closeMobileMenu);
+
   // Nav clicks (delegated — nav is re-rendered)
   document.addEventListener("click", function (e) {
     var a = e.target.closest("[data-view]");
     if (a) {
       e.preventDefault();
       go(a.dataset.view);
+      closeMobileMenu();
     }
   });
 
   els.lightbox.addEventListener("click", closeLightbox);
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") closeLightbox();
+    if (e.key === "Escape") {
+      closeLightbox();
+      closeMobileMenu();
+    }
   });
 
   els.strip.addEventListener("scroll", function () {
@@ -255,6 +282,12 @@
 
   var savedTheme = localStorage.getItem(THEME_KEY);
   applyTheme(savedTheme === "dark" || savedTheme === "light" ? savedTheme : "light");
+
+  // Re-pick desktop/mobile image sources if the viewport crosses the
+  // breakpoint (e.g. rotating a phone, resizing a window).
+  MOBILE_MQ.addEventListener("change", function () {
+    if (!isText()) renderGallery();
+  });
 
   window.addEventListener("hashchange", onHashChange);
   onHashChange();

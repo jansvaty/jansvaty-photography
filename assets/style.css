@@ -233,6 +233,54 @@ button {
   border-color: var(--fg);
 }
 
+/* Mobile menu toggle + scrim — inert above the 720px breakpoint */
+
+.menu-toggle {
+  display: none;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.menu-toggle span,
+.menu-toggle span::before,
+.menu-toggle span::after {
+  display: block;
+  width: 16px;
+  height: 1px;
+  background: var(--fg);
+}
+
+.menu-toggle span {
+  position: relative;
+}
+
+.menu-toggle span::before,
+.menu-toggle span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.menu-toggle span::before {
+  top: -5px;
+}
+
+.menu-toggle span::after {
+  top: 5px;
+}
+
+.sidebar-scrim {
+  display: none;
+}
+
 /* Text views (About / Contact) */
 
 .text-view {
@@ -397,32 +445,61 @@ button {
   display: none;
 }
 
-/* Small screens: sidebar becomes a top bar, strip clears it from the top instead of the left */
+/* Small screens: sidebar becomes a slide-out drawer opened by the hamburger
+   button, instead of permanently occupying viewport space. The gallery gets
+   the full height below the topbar. */
 
 @media (max-width: 720px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .topbar {
+    justify-content: space-between;
+    padding: 16px 20px;
+  }
+
   .sidebar {
-    width: auto;
-    inset: 0 0 auto 0 !important;
-    max-height: 46vh;
+    position: fixed;
+    inset: 0 auto 0 0 !important;
+    z-index: 60;
+    width: 85vw;
+    max-width: 340px;
+    max-height: none;
     border-radius: 0 !important;
     box-shadow: none !important;
+    transform: translateX(-100%);
+    transition: transform 320ms cubic-bezier(0.22, 0.61, 0.36, 1), background 400ms ease;
   }
+
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+
+  .sidebar-scrim {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 55;
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 250ms ease;
+  }
+
+  .sidebar-scrim.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   .text-view,
   .strip,
   .strip-controls {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
+
   .text-view {
-    padding-top: 24px;
-  }
-  .main {
-    padding-top: 46vh;
-  }
-  .topbar {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 16px 20px;
+    padding-top: 16px;
   }
 }
