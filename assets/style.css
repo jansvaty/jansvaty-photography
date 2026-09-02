@@ -77,7 +77,15 @@ button {
   position: relative;
   width: 100%;
   max-width: 100vw;
+  /* 100vh doesn't account for Safari's address bar / toolbar on iOS, so a
+     page that never scrolls (like this one — overflow:hidden throughout,
+     only inner panels scroll) can end up with content sized past the
+     visible area, hidden behind that chrome. 100svh is always sized to
+     the smallest guaranteed viewport (toolbar shown), so nothing is ever
+     hidden behind it. Keep the 100vh line first as a fallback for browsers
+     without svh support — they'll just ignore the line after it. */
   height: 100vh;
+  height: 100svh;
   overflow: hidden;
   background: var(--bg);
   color: var(--fg);
