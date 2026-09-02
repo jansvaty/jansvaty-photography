@@ -10,10 +10,10 @@
 
   // Authored running order, with titles — matches the Claude Design handoff spec.
   var FRAMES = [
-    { n: 32, title: "Venice basketball", series: "street" },
     { n: 6, title: "Mila" },
     { n: 11, title: "Water", series: "portraits" },
     { n: 21, title: "Mighty ocean", series: "ocean" },
+    { n: 32, title: "Venice basketball", series: "street" },
     { n: 3, title: "Beaky", series: "wildlife" },
     { n: 4, title: "Barber in Porto", series: "street" },
     { n: 5, title: "Charles bridge", series: "street" },
