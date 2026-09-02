@@ -521,4 +521,26 @@ button {
   .sub-links a {
     padding: 4px 0;
   }
+
+  /* Photos: on desktop each frame is sized by height, so a landscape photo
+     is often wider than the strip and only fully visible by scrolling
+     within it. On a phone that's the wrong tradeoff — each frame should
+     be exactly one screen-width, with the photo scaled to fit inside it
+     (object-fit: contain) so the whole image is always visible without
+     side-scrolling to see its edges. Swiping moves between photos instead. */
+  .strip {
+    gap: 16px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .frame {
+    width: 100%;
+  }
+
+  .frame img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
 }
