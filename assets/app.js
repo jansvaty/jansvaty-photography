@@ -38,8 +38,7 @@
     { n: 31, title: "McKinnon Pass", series: "landscape" },
     { n: 7, title: "Picturesque", series: "portraits" },
     { n: 27, title: "Dubai", series: "landscape" },
-    { n: 26, title: "Tiny home by the beach", series: "landscape" },
-    { n: 10, title: "Peace out", series: "portraits" }
+    { n: 26, title: "Tiny home by the beach", series: "landscape" }
   ].map(function (x) {
     return { src: f(x.n), srcMobile: fMobile(x.n), title: x.title, series: x.series };
   });
